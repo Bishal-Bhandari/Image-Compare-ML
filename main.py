@@ -1,7 +1,11 @@
+import cv2
+import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 
-img1=mpimg.imread('33505.jpg')
-img2=mpimg.imread('33505 - Copy.jpg')
-print(img2)
-imgplot = plt.imshow(img2)
+img1 = cv2.imread('33505.jpg', cv2.IMREAD_GRAYSCALE)
+img2 = cv2.imread('33505 - Copy.jpg', cv2.IMREAD_GRAYSCALE)
+
+imS = cv2.resize(img1, (960, 540))
+cv2.imshow('image',imS)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
